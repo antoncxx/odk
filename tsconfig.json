@@ -12,7 +12,14 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["ES2021"]
+    "lib": ["ES2021"],
+
+    "baseUrl": ".",
+    "paths": {
+      "@library1/*": ["library-1/src/*"],
+      "@library2/*": ["library-2/src/*"],
+      "@odk/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "library-1/src/**/*", "library-2/src/**/*"]
 }
