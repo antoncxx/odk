@@ -43,4 +43,30 @@ describe('UselessKit', () => {
       }
     });
   });
+
+  describe('clampPositive', () => {
+    test('should return the value if it is non-negative', () => {
+      const value = 5;
+      (MathUtils.clamp as jest.Mock).mockReturnValue(value);
+
+      expect(UselessKit.clampPositive(value)).toBe(value);
+      expect(MathUtils.clamp).toHaveBeenCalledWith(
+        value,
+        0,
+        Number.POSITIVE_INFINITY,
+      );
+    });
+
+    test('should return 0 if the value is negative', () => {
+      const value = -5;
+      (MathUtils.clamp as jest.Mock).mockReturnValue(0);
+
+      expect(UselessKit.clampPositive(value)).toBe(0);
+      expect(MathUtils.clamp).toHaveBeenCalledWith(
+        value,
+        0,
+        Number.POSITIVE_INFINITY,
+      );
+    });
+  });
 });

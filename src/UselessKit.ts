@@ -15,4 +15,8 @@ export class UselessKit {
 
     return retval;
   }
+
+  public static clampPositive(value: number) {
+    return MathUtils.clamp(value, 0, Number.POSITIVE_INFINITY);
+  }
 }
