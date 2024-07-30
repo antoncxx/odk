@@ -1,0 +1,42 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended"],
+  "jsRules": {},
+  "rules": {
+    "align": [true, "parameters", "statements"],
+    "ban": [true, ["alert"]],
+    "curly": [true, "ignore-same-line"],
+    "eofline": true,
+    "indent": [true, "spaces", 2],
+    "no-console": [true, "log", "error"],
+    "no-debugger": true,
+    "no-empty": false,
+    "no-shadowed-variable": true,
+    "quotemark": [true, "single", "avoid-escape"],
+    "semicolon": [true, "always"],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-leading-underscore"
+    ],
+    "member-access": [
+      true,
+      "check-accessor",
+      "check-constructor",
+      "check-parameter-property"
+    ]
+  },
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": ["src/**/*.test.ts", "src/**/*.test.js"]
+  }
+}
